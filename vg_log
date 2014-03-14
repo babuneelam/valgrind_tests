@@ -1,139 +1,148 @@
-==12172== Memcheck, a memory error detector
-==12172== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
-==12172== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
-==12172== Command: ./vg_test.o 1 2 3 4 5 7 8 9
-==12172== Parent PID: 2977
-==12172== 
-==12172== Use of uninitialised value of size 4
-==12172==    at 0x409028B: _itoa_word (_itoa.c:179)
-==12172==    by 0x4093B01: vfprintf (vfprintf.c:1654)
-==12172==    by 0x409A7FE: printf (printf.c:34)
-==12172==    by 0x8048869: main (vg_test.c:125)
-==12172==  Uninitialised value was created by a stack allocation
-==12172==    at 0x80485C0: unintialized_use (vg_test.c:7)
-==12172== 
-==12172== Conditional jump or move depends on uninitialised value(s)
-==12172==    at 0x4090293: _itoa_word (_itoa.c:179)
-==12172==    by 0x4093B01: vfprintf (vfprintf.c:1654)
-==12172==    by 0x409A7FE: printf (printf.c:34)
-==12172==    by 0x8048869: main (vg_test.c:125)
-==12172==  Uninitialised value was created by a stack allocation
-==12172==    at 0x80485C0: unintialized_use (vg_test.c:7)
-==12172== 
-==12172== Conditional jump or move depends on uninitialised value(s)
-==12172==    at 0x4090FC5: vfprintf (vfprintf.c:1654)
-==12172==    by 0x409A7FE: printf (printf.c:34)
-==12172==    by 0x8048869: main (vg_test.c:125)
-==12172==  Uninitialised value was created by a stack allocation
-==12172==    at 0x80485C0: unintialized_use (vg_test.c:7)
-==12172== 
-==12172== Conditional jump or move depends on uninitialised value(s)
-==12172==    at 0x4091041: vfprintf (vfprintf.c:1654)
-==12172==    by 0x409A7FE: printf (printf.c:34)
-==12172==    by 0x8048869: main (vg_test.c:125)
-==12172==  Uninitialised value was created by a stack allocation
-==12172==    at 0x80485C0: unintialized_use (vg_test.c:7)
-==12172== 
-==12172== Conditional jump or move depends on uninitialised value(s)
-==12172==    at 0x4095308: vfprintf (vfprintf.c:1654)
-==12172==    by 0x409A7FE: printf (printf.c:34)
-==12172==    by 0x8048869: main (vg_test.c:125)
-==12172==  Uninitialised value was created by a stack allocation
-==12172==    at 0x80485C0: unintialized_use (vg_test.c:7)
-==12172== 
-==12172== Conditional jump or move depends on uninitialised value(s)
-==12172==    at 0x4091098: vfprintf (vfprintf.c:1654)
-==12172==    by 0x409A7FE: printf (printf.c:34)
-==12172==    by 0x8048869: main (vg_test.c:125)
-==12172==  Uninitialised value was created by a stack allocation
-==12172==    at 0x80485C0: unintialized_use (vg_test.c:7)
-==12172== 
-==12172== Conditional jump or move depends on uninitialised value(s)
-==12172==    at 0x40910D1: vfprintf (vfprintf.c:1654)
-==12172==    by 0x409A7FE: printf (printf.c:34)
-==12172==    by 0x8048869: main (vg_test.c:125)
-==12172==  Uninitialised value was created by a stack allocation
-==12172==    at 0x80485C0: unintialized_use (vg_test.c:7)
-==12172== 
-==12172== Invalid write of size 4
-==12172==    at 0x804862A: rw_after_free (vg_test.c:24)
-==12172==    by 0x8048870: main (vg_test.c:126)
-==12172==  Address 0x4202060 is 0 bytes inside a block of size 4 free'd
-==12172==    at 0x402AC38: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
-==12172==    by 0x8048626: rw_after_free (vg_test.c:23)
-==12172==    by 0x8048870: main (vg_test.c:126)
-==12172== 
-==12172== Invalid write of size 4
-==12172==    at 0x804864D: rw_malloc_overrun (vg_test.c:33)
-==12172==    by 0x8048877: main (vg_test.c:127)
-==12172==  Address 0x42020c0 is 0 bytes after a block of size 40 alloc'd
-==12172==    at 0x40299D8: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
-==12172==    by 0x8048643: rw_malloc_overrun (vg_test.c:32)
-==12172==    by 0x8048877: main (vg_test.c:127)
-==12172== 
-==12172== Invalid read of size 4
-==12172==    at 0x8048659: rw_malloc_overrun (vg_test.c:34)
-==12172==    by 0x8048877: main (vg_test.c:127)
-==12172==  Address 0x4202094 is 4 bytes before a block of size 40 alloc'd
-==12172==    at 0x40299D8: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
-==12172==    by 0x8048643: rw_malloc_overrun (vg_test.c:32)
-==12172==    by 0x8048877: main (vg_test.c:127)
-==12172== 
-==12172== Invalid write of size 4
-==12172==    at 0x804868A: rw_bad_stk_location (vg_test.c:47)
-==12172==    by 0x804887E: main (vg_test.c:128)
-==12172==  Address 0xbe878570 is just below the stack ptr.  To suppress, use: --workaround-gcc296-bugs=yes
-==12172== 
-==12172== Invalid read of size 4
-==12172==    at 0x8048693: rw_bad_stk_location (vg_test.c:48)
-==12172==    by 0x804887E: main (vg_test.c:128)
-==12172==  Address 0xbe878554 is just below the stack ptr.  To suppress, use: --workaround-gcc296-bugs=yes
-==12172== 
-==12172== Source and destination overlap in memcpy(0xbe8781a4, 0xbe878334, 500)
-==12172==    at 0x402E020: memcpy (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
-==12172==    by 0x8048754: memcpy_overlapping_src_dst (vg_test.c:83)
-==12172==    by 0x8048893: main (vg_test.c:131)
-==12172== 
-==12172== Invalid free() / delete / delete[] / realloc()
-==12172==    at 0x402AC38: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
-==12172==    by 0x804877F: double_free (vg_test.c:91)
-==12172==    by 0x804889A: main (vg_test.c:132)
-==12172==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
-==12172== 
-==12172== Invalid free() / delete / delete[] / realloc()
-==12172==    at 0x402AC38: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
-==12172==    by 0x804878A: double_free (vg_test.c:92)
-==12172==    by 0x804889A: main (vg_test.c:132)
-==12172==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
-==12172== 
-==12172== Syscall param read(buf) points to unaddressable byte(s)
-==12172==    at 0x412C8B3: __read_nocancel (syscall-template.S:81)
-==12172==    by 0x80488A1: main (vg_test.c:133)
-==12172==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
-==12172== 
-==12172== Syscall param write(buf) points to unaddressable byte(s)
-==12172==    at 0x412C933: __write_nocancel (syscall-template.S:81)
-==12172==    by 0x80488A1: main (vg_test.c:133)
-==12172==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
-==12172== 
-==12172== Invalid free() / delete / delete[] / realloc()
-==12172==    at 0x402AC38: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
-==12172==    by 0x80487E6: systemcall_unaddressable_bytes (vg_test.c:107)
-==12172==    by 0x80488A1: main (vg_test.c:133)
-==12172==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
-==12172== 
-==12172== 
-==12172== HEAP SUMMARY:
-==12172==     in use at exit: 12 bytes in 2 blocks
-==12172==   total heap usage: 5 allocs, 6 frees, 60 bytes allocated
-==12172== 
-==12172== LEAK SUMMARY:
-==12172==    definitely lost: 12 bytes in 2 blocks
-==12172==    indirectly lost: 0 bytes in 0 blocks
-==12172==      possibly lost: 0 bytes in 0 blocks
-==12172==    still reachable: 0 bytes in 0 blocks
-==12172==         suppressed: 0 bytes in 0 blocks
-==12172== Rerun with --leak-check=full to see details of leaked memory
-==12172== 
-==12172== For counts of detected and suppressed errors, rerun with: -v
-==12172== ERROR SUMMARY: 27 errors from 18 contexts (suppressed: 0 from 0)
+==12222== Memcheck, a memory error detector
+==12222== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==12222== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==12222== Command: ./vg_test.o 1 2 3 4 5 7 8 9
+==12222== Parent PID: 2977
+==12222== 
+==12222== Use of uninitialised value of size 4
+==12222==    at 0x409028B: _itoa_word (_itoa.c:179)
+==12222==    by 0x4093B01: vfprintf (vfprintf.c:1654)
+==12222==    by 0x409A7FE: printf (printf.c:34)
+==12222==    by 0x8048869: main (vg_test.c:125)
+==12222==  Uninitialised value was created by a stack allocation
+==12222==    at 0x80485C0: unintialized_use (vg_test.c:7)
+==12222== 
+==12222== Conditional jump or move depends on uninitialised value(s)
+==12222==    at 0x4090293: _itoa_word (_itoa.c:179)
+==12222==    by 0x4093B01: vfprintf (vfprintf.c:1654)
+==12222==    by 0x409A7FE: printf (printf.c:34)
+==12222==    by 0x8048869: main (vg_test.c:125)
+==12222==  Uninitialised value was created by a stack allocation
+==12222==    at 0x80485C0: unintialized_use (vg_test.c:7)
+==12222== 
+==12222== Conditional jump or move depends on uninitialised value(s)
+==12222==    at 0x4090FC5: vfprintf (vfprintf.c:1654)
+==12222==    by 0x409A7FE: printf (printf.c:34)
+==12222==    by 0x8048869: main (vg_test.c:125)
+==12222==  Uninitialised value was created by a stack allocation
+==12222==    at 0x80485C0: unintialized_use (vg_test.c:7)
+==12222== 
+==12222== Conditional jump or move depends on uninitialised value(s)
+==12222==    at 0x4091041: vfprintf (vfprintf.c:1654)
+==12222==    by 0x409A7FE: printf (printf.c:34)
+==12222==    by 0x8048869: main (vg_test.c:125)
+==12222==  Uninitialised value was created by a stack allocation
+==12222==    at 0x80485C0: unintialized_use (vg_test.c:7)
+==12222== 
+==12222== Conditional jump or move depends on uninitialised value(s)
+==12222==    at 0x4095308: vfprintf (vfprintf.c:1654)
+==12222==    by 0x409A7FE: printf (printf.c:34)
+==12222==    by 0x8048869: main (vg_test.c:125)
+==12222==  Uninitialised value was created by a stack allocation
+==12222==    at 0x80485C0: unintialized_use (vg_test.c:7)
+==12222== 
+==12222== Conditional jump or move depends on uninitialised value(s)
+==12222==    at 0x4091098: vfprintf (vfprintf.c:1654)
+==12222==    by 0x409A7FE: printf (printf.c:34)
+==12222==    by 0x8048869: main (vg_test.c:125)
+==12222==  Uninitialised value was created by a stack allocation
+==12222==    at 0x80485C0: unintialized_use (vg_test.c:7)
+==12222== 
+==12222== Conditional jump or move depends on uninitialised value(s)
+==12222==    at 0x40910D1: vfprintf (vfprintf.c:1654)
+==12222==    by 0x409A7FE: printf (printf.c:34)
+==12222==    by 0x8048869: main (vg_test.c:125)
+==12222==  Uninitialised value was created by a stack allocation
+==12222==    at 0x80485C0: unintialized_use (vg_test.c:7)
+==12222== 
+==12222== Invalid write of size 4
+==12222==    at 0x804862A: rw_after_free (vg_test.c:24)
+==12222==    by 0x8048870: main (vg_test.c:126)
+==12222==  Address 0x4202060 is 0 bytes inside a block of size 4 free'd
+==12222==    at 0x402AC38: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==12222==    by 0x8048626: rw_after_free (vg_test.c:23)
+==12222==    by 0x8048870: main (vg_test.c:126)
+==12222== 
+==12222== Invalid write of size 4
+==12222==    at 0x804864D: rw_malloc_overrun (vg_test.c:33)
+==12222==    by 0x8048877: main (vg_test.c:127)
+==12222==  Address 0x42020c0 is 0 bytes after a block of size 40 alloc'd
+==12222==    at 0x40299D8: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==12222==    by 0x8048643: rw_malloc_overrun (vg_test.c:32)
+==12222==    by 0x8048877: main (vg_test.c:127)
+==12222== 
+==12222== Invalid read of size 4
+==12222==    at 0x8048659: rw_malloc_overrun (vg_test.c:34)
+==12222==    by 0x8048877: main (vg_test.c:127)
+==12222==  Address 0x4202094 is 4 bytes before a block of size 40 alloc'd
+==12222==    at 0x40299D8: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==12222==    by 0x8048643: rw_malloc_overrun (vg_test.c:32)
+==12222==    by 0x8048877: main (vg_test.c:127)
+==12222== 
+==12222== Invalid write of size 4
+==12222==    at 0x804868A: rw_bad_stk_location (vg_test.c:47)
+==12222==    by 0x804887E: main (vg_test.c:128)
+==12222==  Address 0xbeb80570 is just below the stack ptr.  To suppress, use: --workaround-gcc296-bugs=yes
+==12222== 
+==12222== Invalid read of size 4
+==12222==    at 0x8048693: rw_bad_stk_location (vg_test.c:48)
+==12222==    by 0x804887E: main (vg_test.c:128)
+==12222==  Address 0xbeb80554 is just below the stack ptr.  To suppress, use: --workaround-gcc296-bugs=yes
+==12222== 
+==12222== Source and destination overlap in memcpy(0xbeb801a4, 0xbeb80334, 500)
+==12222==    at 0x402E020: memcpy (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==12222==    by 0x8048754: memcpy_overlapping_src_dst (vg_test.c:83)
+==12222==    by 0x8048893: main (vg_test.c:131)
+==12222== 
+==12222== Invalid free() / delete / delete[] / realloc()
+==12222==    at 0x402AC38: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==12222==    by 0x804877F: double_free (vg_test.c:91)
+==12222==    by 0x804889A: main (vg_test.c:132)
+==12222==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
+==12222== 
+==12222== Invalid free() / delete / delete[] / realloc()
+==12222==    at 0x402AC38: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==12222==    by 0x804878A: double_free (vg_test.c:92)
+==12222==    by 0x804889A: main (vg_test.c:132)
+==12222==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
+==12222== 
+==12222== Syscall param read(buf) points to unaddressable byte(s)
+==12222==    at 0x412C8B3: __read_nocancel (syscall-template.S:81)
+==12222==    by 0x80488A1: main (vg_test.c:133)
+==12222==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
+==12222== 
+==12222== Syscall param write(buf) points to unaddressable byte(s)
+==12222==    at 0x412C933: __write_nocancel (syscall-template.S:81)
+==12222==    by 0x80488A1: main (vg_test.c:133)
+==12222==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
+==12222== 
+==12222== Invalid free() / delete / delete[] / realloc()
+==12222==    at 0x402AC38: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==12222==    by 0x80487E6: systemcall_unaddressable_bytes (vg_test.c:107)
+==12222==    by 0x80488A1: main (vg_test.c:133)
+==12222==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
+==12222== 
+==12222== 
+==12222== HEAP SUMMARY:
+==12222==     in use at exit: 12 bytes in 2 blocks
+==12222==   total heap usage: 5 allocs, 6 frees, 60 bytes allocated
+==12222== 
+==12222== 4 bytes in 1 blocks are definitely lost in loss record 1 of 2
+==12222==    at 0x40299D8: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==12222==    by 0x80486AC: mem_leak (vg_test.c:56)
+==12222==    by 0x8048885: main (vg_test.c:129)
+==12222== 
+==12222== 8 bytes in 1 blocks are definitely lost in loss record 2 of 2
+==12222==    at 0x40299D8: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==12222==    by 0x80486BB: mem_leak (vg_test.c:57)
+==12222==    by 0x8048885: main (vg_test.c:129)
+==12222== 
+==12222== LEAK SUMMARY:
+==12222==    definitely lost: 12 bytes in 2 blocks
+==12222==    indirectly lost: 0 bytes in 0 blocks
+==12222==      possibly lost: 0 bytes in 0 blocks
+==12222==    still reachable: 0 bytes in 0 blocks
+==12222==         suppressed: 0 bytes in 0 blocks
+==12222== 
+==12222== For counts of detected and suppressed errors, rerun with: -v
+==12222== ERROR SUMMARY: 29 errors from 20 contexts (suppressed: 0 from 0)
