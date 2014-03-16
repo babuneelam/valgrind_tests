@@ -1,0 +1,157 @@
+
+root@babu-VirtualBox:~/tools/valgrind_tests# valgrind --track-origins=yes --leak-check=full ./vg_tests 1 2 3 4 5 7 8 9
+==30475== Memcheck, a memory error detector
+==30475== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==30475== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==30475== Command: ./vg_tests 1 2 3 4 5 7 8 9
+==30475== 
+==30475== Use of uninitialised value of size 4
+==30475==    at 0x409028B: _itoa_word (_itoa.c:179)
+==30475==    by 0x4093B01: vfprintf (vfprintf.c:1654)
+==30475==    by 0x409A7FE: printf (printf.c:34)
+==30475==    by 0x8048869: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==  Uninitialised value was created by a stack allocation
+==30475==    at 0x80485C0: unintialized_use (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475== 
+==30475== Conditional jump or move depends on uninitialised value(s)
+==30475==    at 0x4090293: _itoa_word (_itoa.c:179)
+==30475==    by 0x4093B01: vfprintf (vfprintf.c:1654)
+==30475==    by 0x409A7FE: printf (printf.c:34)
+==30475==    by 0x8048869: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==  Uninitialised value was created by a stack allocation
+==30475==    at 0x80485C0: unintialized_use (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475== 
+==30475== Conditional jump or move depends on uninitialised value(s)
+==30475==    at 0x4090FC5: vfprintf (vfprintf.c:1654)
+==30475==    by 0x409A7FE: printf (printf.c:34)
+==30475==    by 0x8048869: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==  Uninitialised value was created by a stack allocation
+==30475==    at 0x80485C0: unintialized_use (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475== 
+==30475== Conditional jump or move depends on uninitialised value(s)
+==30475==    at 0x4091041: vfprintf (vfprintf.c:1654)
+==30475==    by 0x409A7FE: printf (printf.c:34)
+==30475==    by 0x8048869: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==  Uninitialised value was created by a stack allocation
+==30475==    at 0x80485C0: unintialized_use (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475== 
+==30475== Conditional jump or move depends on uninitialised value(s)
+==30475==    at 0x4095308: vfprintf (vfprintf.c:1654)
+==30475==    by 0x409A7FE: printf (printf.c:34)
+==30475==    by 0x8048869: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==  Uninitialised value was created by a stack allocation
+==30475==    at 0x80485C0: unintialized_use (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475== 
+==30475== Conditional jump or move depends on uninitialised value(s)
+==30475==    at 0x4091098: vfprintf (vfprintf.c:1654)
+==30475==    by 0x409A7FE: printf (printf.c:34)
+==30475==    by 0x8048869: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==  Uninitialised value was created by a stack allocation
+==30475==    at 0x80485C0: unintialized_use (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475== 
+==30475== Conditional jump or move depends on uninitialised value(s)
+==30475==    at 0x40910D1: vfprintf (vfprintf.c:1654)
+==30475==    by 0x409A7FE: printf (printf.c:34)
+==30475==    by 0x8048869: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==  Uninitialised value was created by a stack allocation
+==30475==    at 0x80485C0: unintialized_use (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475== 
+10
+*num = 0 
+==30475== Invalid write of size 4
+==30475==    at 0x804862A: rw_after_free (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==    by 0x8048870: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==  Address 0x4202060 is 0 bytes inside a block of size 4 free'd
+==30475==    at 0x402AC38: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==30475==    by 0x8048626: rw_after_free (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==    by 0x8048870: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475== 
+==30475== Invalid write of size 4
+==30475==    at 0x804864D: rw_malloc_overrun (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==    by 0x8048877: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==  Address 0x42020c0 is 0 bytes after a block of size 40 alloc'd
+==30475==    at 0x40299D8: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==30475==    by 0x8048643: rw_malloc_overrun (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==    by 0x8048877: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475== 
+==30475== Invalid read of size 4
+==30475==    at 0x8048659: rw_malloc_overrun (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==    by 0x8048877: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==  Address 0x4202094 is 4 bytes before a block of size 40 alloc'd
+==30475==    at 0x40299D8: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==30475==    by 0x8048643: rw_malloc_overrun (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==    by 0x8048877: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475== 
+i[-1] = 0 
+==30475== Invalid write of size 4
+==30475==    at 0x804868A: rw_bad_stk_location (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==    by 0x804887E: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==  Address 0xbec1e580 is just below the stack ptr.  To suppress, use: --workaround-gcc296-bugs=yes
+==30475== 
+==30475== Invalid read of size 4
+==30475==    at 0x8048693: rw_bad_stk_location (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==    by 0x804887E: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==  Address 0xbec1e564 is just below the stack ptr.  To suppress, use: --workaround-gcc296-bugs=yes
+==30475== 
+==30475== Source and destination overlap in memcpy(0xbec1e1b4, 0xbec1e344, 500)
+==30475==    at 0x402E020: memcpy (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==30475==    by 0x8048754: memcpy_overlapping_src_dst (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==    by 0x8048893: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475== 
+==30475== Invalid free() / delete / delete[] / realloc()
+==30475==    at 0x402AC38: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==30475==    by 0x804877F: double_free (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==    by 0x804889A: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
+==30475== 
+==30475== Invalid free() / delete / delete[] / realloc()
+==30475==    at 0x402AC38: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==30475==    by 0x804878A: double_free (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==    by 0x804889A: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
+==30475== 
+Please type a bunch of characters and hit enter.
+==30475== Syscall param read(buf) points to unaddressable byte(s)
+==30475==    at 0x412C8B3: __read_nocancel (syscall-template.S:81)
+==30475==    by 0x80488A1: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
+==30475== 
+
+==30475== Syscall param write(buf) points to unaddressable byte(s)
+==30475==    at 0x412C933: __write_nocancel (syscall-template.S:81)
+==30475==    by 0x80488A1: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
+==30475== 
+==30475== Invalid free() / delete / delete[] / realloc()
+==30475==    at 0x402AC38: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==30475==    by 0x80487E6: systemcall_unaddressable_bytes (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==    by 0x80488A1: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
+==30475== 
+==30475== 
+==30475== HEAP SUMMARY:
+==30475==     in use at exit: 12 bytes in 2 blocks
+==30475==   total heap usage: 5 allocs, 6 frees, 60 bytes allocated
+==30475== 
+==30475== 4 bytes in 1 blocks are definitely lost in loss record 1 of 2
+==30475==    at 0x40299D8: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==30475==    by 0x80486AC: mem_leak (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==    by 0x8048885: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475== 
+==30475== 8 bytes in 1 blocks are definitely lost in loss record 2 of 2
+==30475==    at 0x40299D8: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==30475==    by 0x80486BB: mem_leak (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475==    by 0x8048885: main (in /home/babu/tools/valgrind_tests/vg_tests)
+==30475== 
+==30475== LEAK SUMMARY:
+==30475==    definitely lost: 12 bytes in 2 blocks
+==30475==    indirectly lost: 0 bytes in 0 blocks
+==30475==      possibly lost: 0 bytes in 0 blocks
+==30475==    still reachable: 0 bytes in 0 blocks
+==30475==         suppressed: 0 bytes in 0 blocks
+==30475== 
+==30475== For counts of detected and suppressed errors, rerun with: -v
+==30475== ERROR SUMMARY: 29 errors from 20 contexts (suppressed: 0 from 0)
+root@babu-VirtualBox:~/tools/valgrind_tests# 
+
+
